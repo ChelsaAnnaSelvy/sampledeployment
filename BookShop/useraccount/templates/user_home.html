@@ -1,0 +1,26 @@
+{% extends 'user_base.html' %}
+{%block title%}My Profile{% endblock %}
+{%block content%}
+<h1 class="text-center">Profile Details</h1>
+<div class="col-6 text-center"  style="margin:30px 400px">
+<table class="table table-striped table-light" style="border-radius:8px">   
+   
+{% for  i in profile %}
+
+<tr><th><label>Name</label></th><td><p>{{ i.name}}</p></td><td rowspan="8" style="padding:80px 20px"><img src="{{ i.photo.url}}" alt="{{ i.name}}" height="400px" width="300px"/></td></tr>
+<tr><th><label>Email</label></th><td><p>{{ i.email}}</p></td></tr>
+<tr><th><label>Phone</label></th><td><p>{{ i.phone}}</p></td></tr>
+<tr><th><label>Gender</label></th><td><p>{{ i.gender}}</p></td></tr>
+<tr><th><label>DOB</label></th><td><p>{{ i.dob}}</p></td></tr>
+<tr><th><label>Country</label></th><td><p>{{ i.country}}</p></td></tr>
+<tr><th><label>State</label></th><td><p>{{ i.state}}</p></td></tr>
+
+{% endfor %}
+{% for  i in user %}
+<tr><th><label>Username</label></th><td><p>{{ i.username}}</p></td></tr>
+{% endfor %}
+
+    
+</table>
+</div>
+{% endblock %} 

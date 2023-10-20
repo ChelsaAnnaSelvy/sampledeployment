@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Home
+{% endblock %}
+
+{% block content %}
+<div class="container-fluid">
+  <div class="row">
+<h1 class="text-center text-success-emphasis">E-Library</h1>
+{%for i in products%}
+<div class="col-4">
+    <div class="card" style="width: 24rem;margin-top:30px">
+        <img class="card-img-top" src="{{i.cover_photo.url}}" alt="Card image cap" height="400">
+        <div class="card-body">
+            <p class="card-header">{{i.title}}</p>
+          <p class="card-text"><strong>Author:&nbsp;</strong>{{i.author}}&nbsp;&nbsp;<strong>Category:&nbsp;</strong> {{i.product_category.category_name}}&nbsp;&nbsp;<strong>Rate:&nbsp;</strong>Rs. {{i.rate}}&nbsp;
+            <strong>Stock Available: &nbsp;</strong>{{i.stock}}&nbsp;</p>
+        </div>
+      </div>
+      </div>
+{% endfor %}
+</div>
+</div>
+{% endblock %}

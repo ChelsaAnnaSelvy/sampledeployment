@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Register Here
+{% endblock %}
+
+{% block content %}
+
+<div class="row">
+    <h1 class="text-center text-success-emphasis"> Register Here</h1>
+    <div class="col col-6" style="margin:10px 400px;border:1px solid rgb(52, 164, 21);border-radius: 8px">
+    <form method="post" enctype="multipart/form-data" style="margin:30px">
+        {% csrf_token %}
+        {{ form.as_p }}
+        {{ form1.as_p }}
+
+        <button type="submit" class="btn btn-outline-success" style="margin:50px 300px" >Submit</button>
+    </form>
+</div>
+</div>
+{% endblock %}
